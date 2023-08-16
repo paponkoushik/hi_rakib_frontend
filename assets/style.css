@@ -1,0 +1,919 @@
+
+@font-face {
+    font-family: AvertaRegular;
+    src: url(./assets/fonts/Averta-Regular.ttf);
+}
+
+@font-face {
+    font-family: AvertaSemibold;
+    src: url(./assets/fonts/Averta-Semibold.ttf);
+}
+
+@font-face {
+    font-family: AvertaBold;
+    src: url(./assets/fonts/Averta-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: AvertaRegular, 'Google Sans', sans-serif;
+}
+
+:root {
+    --color1: #4680FE;
+    --color2: #FB607F;
+    --color-black: #1D1E22;
+    --color-black-tint1: #474B57;
+    --color-black-tint2: #7A7E87;
+    --gradient1: linear-gradient(to right, var(--color1), var(--color2), var(--color2));
+    --gradient2: linear-gradient(to right, var(--color1), var(--color2));
+    --gradient3: linear-gradient(135deg, #D6E3FF 6.98%, #FFDCE3 88.6%);
+}
+
+p {
+    color: var(--color-black-tint2);
+}
+
+.text-primary2 {
+    color: var(--color2);
+}
+
+.text-black1 {
+    color: var(--color-black-tint1);
+}
+
+.bg-black2 {
+    background-color: #F6F7FB;
+}
+
+.btn-primary-rounded {
+    background-color: #4680FE;
+    color: #fff;
+    padding: 0 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 2.5rem;
+}
+
+.btn-primary-rounded:hover {
+    background-color: #0056b3;
+}
+
+.btn-primary-rounded-outline {
+    padding: 0 29px;
+    border: 1px solid #4680FE;
+    border-radius: 20px;
+    color: #4680FE;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 2.5rem;
+}
+
+.btn-primary-rounded-outline:hover {
+    background-color: #4680FE;
+    color: #fff;
+}
+
+.btn-primary-square-rounded {
+    background-color: #4680FE;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    height: 2.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary-square-rounded:hover {
+    background-color: #0056b3;
+}
+
+section {
+    padding: 3.5rem 0;
+}
+
+.section-title {
+    margin: 1rem 0;
+    font-family: AvertaBold;
+    font-size: 2.5rem;
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/*===========================================
+global end
+=============================================*/
+
+
+/*===========================================
+header start
+=============================================*/
+
+.header {
+    height: 4rem;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-family: AvertaBold;
+    color: var(--color-black-tint1);
+    margin: 0;
+}
+
+.site-title span {
+    font-family: AvertaBold;
+    color: var(--color1);
+}
+
+.navi-list {
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.navi-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #474B57;
+}
+
+.navi-link::before {
+    content: "";
+    margin-right: 6px;
+    width: .5em;
+    height: .5em;
+    border-radius: 50%;
+    background-color: #FB607F;
+    visibility: hidden;
+    transition: all 0.1s ease;
+}
+
+.navi-link:hover::before {
+    visibility: visible;
+}
+
+.active-menu::before {
+    visibility: visible;
+}
+
+.mb-menu img {
+    height: 35px;
+    width: 35px;
+    padding: 5px;
+}
+
+.mb-active .menu-icon {
+    display: none;
+}
+
+.mb-active .menu-close {
+    display: block;
+}
+
+.menu-close {
+    display: none;
+}
+
+.navi-bar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mb-active .navi-bar {
+        display: block;
+        margin-left: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .mb-active .navi-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 0;
+        background: var(--gradient3);
+        opacity: .95;
+        transition: all 5s linear;
+    }
+
+    .mb-menu {
+        z-index: 999;
+    }
+
+    .mb-active .navi-link {
+        font-size: 1.5rem;
+    }
+
+}
+
+/*===========================================
+header end
+=============================================*/
+
+
+/*===========================================
+hero section start
+=============================================*/
+
+.text-gradient1 {
+    background-image: var(--gradient1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hs-name {
+    font-family: AvertaBold;
+    margin-top: .4rem;
+}
+
+.hs-heading {
+    font-family: AvertaBold;
+    font-size: 2rem;
+    padding: .2rem 0;
+
+}
+
+@media (min-width: 768px) {
+    .hs-padding {
+        padding: 2rem 0;
+    }
+
+    .hs-name {
+        font-size: 1.7rem;
+    }
+
+    .hs-heading {
+        font-size: 2.3rem;
+    }
+
+    .imgg {
+        order: 2;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .hs-name {
+        font-size: 2.5rem;
+    }
+
+    .hs-heading {
+        font-size: 3.5rem;
+    }
+
+    .hs-paragraph {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hs-heading {
+        font-size: 4rem;
+    }
+
+    .hs-paragraph {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .hs-heading {
+        font-size: 5rem;
+    }
+
+}
+
+/*===========================================
+hero section end
+=============================================*/
+
+
+/*===========================================
+case study start
+=============================================*/
+.cs-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 1460px;
+    align-content: space-between;
+}
+
+.cs-card {
+    max-width: calc(50% - 2.5rem);
+    padding: 2.5rem 0;
+}
+
+.cs-thumb-container {
+    position: relative;
+}
+
+.cs-thumb {
+    width: 100%;
+}
+
+.cs-arrow {
+    display: none;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 50%;
+    background: var(--gradient2);
+    opacity: 50%;
+}
+
+.cs-title {
+    font-family: AvertaBold;
+    font-size: 1.6rem;
+    margin: 1rem 0;
+}
+
+.cs-link {
+    text-decoration: none;
+}
+
+.cs-thumb-container {
+    transition: transform 0.3s;
+}
+
+.cs-card:hover .cs-thumb-container {
+    transform: scale(1.05);
+}
+
+.cs-card:hover h2,
+.cs-card:hover a {
+    text-decoration: underline;
+}
+
+.cs-card:hover .cs-arrow {
+    display: block;
+}
+
+@media (max-width: 576px) {
+    .cs-card {
+        margin: 0 .2rem;
+    }
+
+    .cs-title {
+        font-size: 1.3rem;
+        margin: .8rem 0;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .cs-container {
+        display: block;
+        max-height: none;
+    }
+
+    .cs-card {
+        max-width: none;
+    }
+
+    .cs-link {
+        text-decoration: underline;
+        display: block;
+        text-align: right;
+    }
+}
+
+/*===========================================
+case study end
+=============================================*/
+
+
+/*===========================================
+design process start
+=============================================*/
+.section-details {
+    margin-bottom: 2rem;
+}
+
+.timeline {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    margin-left: 20%;
+}
+
+.diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.step-container {
+    position: relative;
+    padding: 4px;
+    border: 1px dashed var(--color1);
+    border-radius: 4px;
+}
+
+.step {
+    height: 100px;
+    width: 100px;
+    background: var(--gradient3);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.step-title {
+    font-family: AvertaBold;
+    font-size: 1rem;
+}
+
+.step-text {
+    position: absolute;
+    top: 35%;
+    left: 160px;
+}
+
+.step-text p {
+    display: none;
+}
+
+.step-arrow {
+    height: 100px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.ite {
+    position: absolute;
+}
+
+.ite1 {
+    height: 200px;
+    top: 58px;
+    left: calc(50% - 72px);
+}
+
+.ite2 {
+    height: 860px;
+    top: 40px;
+    left: calc(50% - 87px);
+}
+
+.ite3 {
+    height: 200px;
+    top: 280px;
+    left: calc(50% - 72px);
+}
+
+.ite4 {
+    height: 200px;
+    top: 685px;
+    left: calc(50% - 72px);
+}
+
+.ite5 {
+    height: 635px;
+    top: 262px;
+    left: calc(50% + 57px);
+}
+
+.ite6 {
+    height: 213px;
+    top: 475px;
+    left: calc(50% + 57px);
+}
+
+.process-summary {
+    max-width: 500px;
+    padding: .8rem;
+    margin: 0 auto;
+    text-align: center;
+    font-family: AvertaBold;
+    font-size: .8rem;
+    color: var(--color1);
+    border: 1px dashed var(--color1);
+    border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+    .step-text {
+        top: 0;
+    }
+
+    .step-text p {
+        display: block;
+        width: 350px;
+    }
+}
+
+@media (min-width: 992px) {
+    .section-details {
+        max-width: 42%;
+        margin: 0;
+    }
+
+    .timeline {
+        margin-left: 0;
+        flex-direction: column;
+    }
+
+    .step-left {
+        left: -400px;
+        text-align: end;
+    }
+}
+
+/*===========================================
+design process end
+=============================================*/
+
+
+/*===========================================
+testimonials start
+=============================================*/
+
+.tm-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 1160px;
+    align-content: space-between;
+}
+
+.tm-card {
+    max-width: calc(50% - 3rem);
+    padding: 2.5rem 0;
+}
+
+.tm-logo {
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.tm-comment {
+    font-family: AvertaBold;
+    font-size: 1rem;
+    color: var(--color-black);
+}
+
+.horizontal-center {
+    display: flex;
+    align-items: center;
+}
+
+.tm-photo {
+    height: 70px;
+}
+
+.tm-name {
+    font-family: AvertaBold;
+    color: var(--color-black-tint2);
+    margin-left: 1rem;
+    font-size: 1rem;
+}
+
+.tm-position {
+    font-size: .8rem;
+    color: var(--color-black-tint2);
+}
+
+.tm-position::before {
+    content: '/';
+    margin: 0 .5rem;
+}
+
+@media (max-width: 576px) {
+    .tm-card {
+        margin: 0 .2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tm-container {
+        display: block;
+        max-height: none;
+    }
+
+    .tm-card {
+        max-width: none;
+    }
+}
+
+/*===========================================
+testimonials end
+=============================================*/
+
+
+/*===========================================
+blogs start
+=============================================*/
+
+.blog-card {
+    transition: transform 0.3s;
+    background-color: white;
+}
+
+.blog-card:hover {
+    transform: scale(1.05);
+}
+
+.blog-card:hover .blog-holder {
+    border: .5px solid var(--color1);
+    border-radius: 5px;
+}
+
+.blog-card:hover .blog-title,
+.blog-card:hover .blog-link {
+    text-decoration: underline;
+}
+
+.blog-thumb {
+    width: 100%;
+}
+
+.blog-details-holder {
+    margin: 1rem 1.5rem;
+}
+
+.blog-title {
+    margin: .5rem 0;
+    font-family: AvertaBold;
+    font-size: .8rem;
+}
+
+.blog-summary {
+    font-size: .7rem;
+}
+
+.blog-link {
+    text-align: right;
+    display: block;
+    font-size: .7rem;
+}
+
+@media (min-width: 576px) {
+    .blog-details-holder {
+        margin: 1rem .5rem;
+    }
+
+    .blog-link {
+        text-decoration: none;
+        text-align: left;
+    }
+}
+
+/*===========================================
+blogs end
+=============================================*/
+
+
+/*===========================================
+footer start
+=============================================*/
+
+.fo-que {
+    font-family: AvertaBold;
+    color: var(--color-black-tint1);
+    font-size: 1rem;
+}
+
+.f-heading {
+    font-family: AvertaBold;
+    font-size: 2.5rem;
+}
+
+.f-sub-heading {
+    font-family: AvertaBold;
+    font-size: 1.5rem;
+    display: inline-block;
+    color: white;
+    background-color: var(--color1);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.required {
+    color: #FB607F;
+}
+
+.form-label1 {
+    display: block;
+    font-size: 1rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    color: var(--color-black-tint2)
+}
+
+.form-control1 {
+    display: block;
+    padding: 0.75rem 0.75rem;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: .5rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.form-control1:focus {
+    border-color: #FB607F;
+    outline: 0;
+}
+
+.sec-1 {
+    grid-area: sec1;
+}
+
+.sec-2 {
+    grid-area: sec2;
+}
+
+.sec-3 {
+    grid-area: sec3;
+    margin-top: 3rem;
+}
+
+.s-link {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    color: var(--color-black);
+    border-bottom: 1px solid var(--color-black-tint2);
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .f-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "sec1 sec2"
+            "sec3 sec2"
+    }
+
+    .sec-3 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .social-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .5rem;
+    }
+
+    .s-link {
+        border-bottom: 0;
+        display: inline-block;
+        font-size: 1rem;
+        margin-top: 0;
+    }
+
+    .s-link img {
+        display: none;
+        margin-left: 2px;
+        height: 12px;
+    }
+
+    .s-link:hover {
+        text-decoration: underline;
+    }
+
+    .s-link:hover img {
+        display: inline-block;
+    }
+
+    .fo-que {
+        font-size: 1.5rem;
+    }
+
+    .f-heading {
+        font-size: 2.2rem;
+    }
+
+    .f-sub-heading {
+        color: #2C364A;
+        background-color: #BAE2BA;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fo-sub {
+        max-width: 80%;
+    }
+}
+
+
+
+
+/*===========================================
+details page start
+=============================================*/
+
+.breadcrumb {
+    margin: 0;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: var(--color-black-tint2);
+}
+
+.breadcrumb-item.active {
+    color: var(--color-black-tint1);
+}
+
+.content {
+    max-width: 768px;
+    margin: 2rem auto;
+}
+
+.content-wide {
+    max-width: 992px;
+    margin: 2rem auto;
+}
+
+.case-study-title {
+    font-family: AvertaBold;
+    color: var(--color-black-tint1);
+    margin: 2rem 0;
+}
+
+.case-study-subtitle {
+    font-family: AvertaBold;
+    color: var(--color-black);
+    margin: 2rem 0;
+}
+
+.case-study-paragraph {
+    color: var(--color-black);
+    line-height: 1.7;
+    margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .breadcrumb {
+        margin: 1rem;
+    }
+}
+
+
+
+/*===========================================
+error page start
+=============================================*/
+
+.text1 {
+    font-family: AvertaBold;
+    color: var(--color2);
+    margin: 1.3rem 0;
+}
+
+.text2 {
+    font-family: AvertaBold;
+    color: var(--color1);
+    font-size: 1.3rem;
+    margin: 1.3rem 0;
+}
+
+.text3 {
+    font-family: AvertaBold;
+    color: var(--color-black);
+    font-size: 1rem;
+    margin: 2.5rem 0 .5rem 0;
+}
+
+.text4 {
+    color: var(--color-black);
+    font-size: 1rem;
+    margin: 0 0 2rem 0;
+}
